@@ -186,6 +186,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'rest_framework',
     'django_browser_reload',
@@ -209,6 +210,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -282,6 +284,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 STATIC_ROOT = BASE_DIR + '/static'
 STATIC_URL = f'/{BASE_PATH}static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'project-static', 'dist'),
     os.path.join(BASE_DIR, 'project-static', 'img'),
