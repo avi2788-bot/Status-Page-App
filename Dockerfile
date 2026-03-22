@@ -20,6 +20,9 @@ RUN pip install -r requirements.txt
 
 COPY . /opt/status-page/
 
+# Collect static files at build time (doesn't need DB/Redis)
+RUN python statuspage/manage.py collectstatic --no-input
+
 EXPOSE 8000
 
 COPY entrypoint.sh /entrypoint.sh
