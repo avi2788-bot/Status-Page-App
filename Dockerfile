@@ -32,3 +32,4 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["python3", "-m", "gunicorn", "--chdir", "statuspage", "--bind", "0.0.0.0:8000", "statuspage.wsgi:application"]
+ 
