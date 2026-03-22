@@ -48,7 +48,7 @@ REDIS = {
 }
 
 # Define the URL which will be used e.g. in E-Mails
-SITE_URL = "https://statuspage-aa.click/"
+SITE_URL = "https://statuspage-aa.click"
 
 # This key is used for secure generation of random numbers and strings. It must never be exposed outside of this file.
 # For optimal security, SECRET_KEY should be at least 50 characters in length and contain a mix of letters, numbers, and
